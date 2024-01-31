@@ -11,12 +11,12 @@ jobs:
       run: |
         git clone "https://github.com/laggykiller/vcpkg.git"
         cd vcpkg
-        git checkout f807e9f693eb0fb82fbedccbdf9d581e84190676
+        git checkout 96c89d6bc4bb6baa58f569f13a9a6017943157dc
         call bootstrap-vcpkg.bat
         cd ..
         "vcpkg\vcpkg.exe" install --triplet=x64-windows-static-release
-    - name: Upload
-      uses: actions/upload-artifact@v3
-      with:
-        name: ffmpeg
-        path: ./vcpkg_installed/x64-windows-static-release/*
+    # - name: Upload
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: ffmpeg
+    #     path: ./vcpkg_installed/x64-windows-static-release/*
