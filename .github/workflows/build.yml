@@ -8,7 +8,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: friendlyanon/setup-vcpkg@v1 
       with:
-        committish: cda5488b6d47f306f7360fbf9b26ebb9335a9c8b
+        committish: a5a1b2957dd820f67738da9fad76787300ba9432
         git-url: https://github.com/laggykiller/vcpkg.git
     - name: Build FFmpeg
       shell: cmd
