@@ -11,7 +11,7 @@ jobs:
       run: |
         git clone "https://github.com/laggykiller/vcpkg.git"
         cd vcpkg
-        git checkout 2f3b2d78e34096ec500343bce7cef62e744b8773
+        git checkout e8d89d3ce0978aa7014a86e3ce66c3e7cfb2fbf0
         call bootstrap-vcpkg.bat
         cd ..
         "vcpkg\vcpkg.exe" install --triplet=x64-windows-static-release
