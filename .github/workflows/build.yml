@@ -1,0 +1,19 @@
+name: build
+on: push
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: friendlyanon/setup-vcpkg@v1 
+      with:
+        committish: 11817569c059ee6837878899bd916e1a9f82de48
+        git-url: https://github.com/microsoft/vcpkg.git
+    - name: Build FFmpeg
+      run: |
+        $env:VCPKG_ROOT\vcpkg.exe install --triplet=x64-windows-static-release
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: ffmpeg
+        path: ./*

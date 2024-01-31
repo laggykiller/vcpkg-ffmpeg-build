@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        {
+            "name": "ffmpeg",
+            "version>=": "6.1",
+            "features": [
+                "all",
+                "ffmpeg",
+                "ffprobe",
+                "ffplay"
+            ]
+        }
+    ],
+    "builtin-baseline": "11817569c059ee6837878899bd916e1a9f82de48"
+}
