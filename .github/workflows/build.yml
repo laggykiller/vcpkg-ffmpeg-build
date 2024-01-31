@@ -6,14 +6,15 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: friendlyanon/setup-vcpkg@v1 
-      with:
-        committish: a5a1b2957dd820f67738da9fad76787300ba9432
-        git-url: https://github.com/laggykiller/vcpkg.git
     - name: Build FFmpeg
       shell: cmd
       run: |
-        %VCPKG_ROOT%\vcpkg.exe install --triplet=x64-windows-static-release
+        git clone "https://github.com/laggykiller/vcpkg.git"
+        cd vcpkg
+        git checkout a5a1b2957dd820f67738da9fad76787300ba9432
+        call bootstrap-vcpkg.bat
+        cd ..
+        "vcpkg\vcpkg.exe" install --triplet=x64-windows-static-release
     - name: Upload
       uses: actions/upload-artifact@v3
       with:
