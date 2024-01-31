@@ -5,6 +5,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - uses: actions/checkout@v4
     - uses: friendlyanon/setup-vcpkg@v1 
       with:
         committish: 11817569c059ee6837878899bd916e1a9f82de48
